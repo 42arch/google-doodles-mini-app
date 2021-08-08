@@ -1,0 +1,13 @@
+{
+  "miniprogramRoot": "./",
+  "projectname": "google-doodles",
+  "description": "谷歌涂鸦！",
+  "appid": "touristappid",
+  "setting": {
+    "urlCheck": true,
+    "es6": false,
+    "postcss": false,
+    "minified": false
+  },
+  "compileType": "miniprogram"
+}
