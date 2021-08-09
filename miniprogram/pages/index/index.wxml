@@ -1,0 +1,20 @@
+<!--index.wxml-->
+<view class="container">
+  <van-button color="linear-gradient(to right, #4bb0ff, #6149f6)">
+    渐变色按钮xx
+  </van-button>
+
+  <van-image width="300" height="200" fit="contain" src="https://gg.footing.dev/logos/doodles/2021/singapore-national-day-2021-6753651837109026-l.png"/>
+
+
+  <block wx:if="{{ doodlesOfToday.length > 0 }}">
+    <view class="logo-view">
+      <van-image  src="{{ doodlesOfToday[0].proxy_url }}"></van-image>
+    </view>
+  </block>
+
+
+
+
+
+</view>
