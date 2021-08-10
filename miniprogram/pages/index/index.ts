@@ -1,13 +1,22 @@
 // index.ts
 import { Doodle } from "../../type/Doodle.type"
-import { getDoodlesOfToday } from "../../utils/api"
+import { getDoodleByMonth, getDoodlesOfToday } from "../../utils/api"
 
 // 获取应用实例
 const app = getApp<any>()
 
 Page({
   data: {
+    dateNow: "",
     doodlesOfToday: [] as Doodle[],
+    actionShow: false,
+    actions: [
+      { name: '去年今日' },
+      { name: '归档' },
+      { name: '精选' },
+      { name: '随机' }
+    ],
+
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
@@ -21,6 +30,10 @@ Page({
     })
   },
   async onLoad() {
+    let dateNow:string = this.getDateNow()
+    this.setData({
+      dateNow: dateNow
+    })
     // @ts-ignore
     // if (wx.getUserProfile) {
     //   this.setData({
@@ -31,12 +44,48 @@ Page({
 
 
     let doodlesOfToday: Doodle[] = await getDoodlesOfToday()
-    console.log(99, doodlesOfToday)
+    // console.log(99, doodlesOfToday)
+    // this.setData({
+    //   doodlesOfToday: doodlesOfToday,
+    //   test: "测试文字"
+    // })
+
+    let doodles = await getDoodleByMonth(2020, 10)
+    console.log(88, doodles)
     this.setData({
-      doodlesOfToday: doodlesOfToday
+      doodlesOfToday: doodlesOfToday,
+      test:"测试文字"
     })
+  },
+
+  getDateNow(): string {
+    let date = new Date()
+    let year = date.getFullYear()
+    let month = date.getMonth() + 1
+    let day = date.getDate()
+    return `${year}年${month}月${day}日`
+  },
+
+  showAction() {
+    this.setData({
+      actionShow: true
+    })
+  },
+
+  closeAction() {
+    this.setData({
+      actionShow: false
+    })
+  },
+
+  onActionClose() {
 
   },
+
+  onActionSelect(e:any) {
+    console.log(e)
+  },
+
   getUserProfile() {
     // 推荐使用wx.getUserProfile获取用户信息，开发者每次通过该接口获取用户个人信息均需用户确认，开发者妥善保管用户快速填写的头像昵称，避免重复弹窗
     wx.getUserProfile({

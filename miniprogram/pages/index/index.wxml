@@ -1,20 +1,36 @@
 <!--index.wxml-->
 <view class="container">
-  <van-button color="linear-gradient(to right, #4bb0ff, #6149f6)">
-    渐变色按钮xx
-  </van-button>
+  <!-- <van-image width="300" height="200" fit="contain" src="https://gg.footing.dev/logos/doodles/2021/singapore-national-day-2021-6753651837109026-l.png"/>
+ -->
+ <view class="top">
+  <view class="date-view">
+    <text>{{ dateNow }}</text>
+  </view>
+  <view class="nav-btn">
+    <van-icon name="ellipsis" color="#4c8aff" size="1.8rem" bindtap="showAction" />
+    <!-- <van-button icon="ellipsis" round="true" color="#4c8aff" size="small"/> -->
+  </view>
+ </view>
 
-  <van-image width="300" height="200" fit="contain" src="https://gg.footing.dev/logos/doodles/2021/singapore-national-day-2021-6753651837109026-l.png"/>
 
 
-  <block wx:if="{{ doodlesOfToday.length > 0 }}">
-    <view class="logo-view">
-      <van-image  src="{{ doodlesOfToday[0].proxy_url }}"></van-image>
+  <view class="logo-view" wx:if="{{ doodlesOfToday.length > 0 }}">
+    <view class="logo-item-view" wx:for="{{ doodlesOfToday }}" wx:for-index="idx" wx:for-item="doodle" wx:key="idx">
+      <van-image fit="widthFix" show-loading width="300" src="{{ doodle['proxy_url'] }}"></van-image>
+      <text>{{ doodle.title }}</text>
     </view>
-  </block>
+  </view>
+  <view class="logo-view" wx:else>
+    <view class="logo-item-view">
+      <van-image fit="widthFix" show-loading width="200" src="https://gg.footing.dev/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png"></van-image>
+    </view>
+  </view>
 
 
 
 
-
+  <van-action-sheet show="{{ actionShow }}" actions="{{ actions }}"
+    bind:close="onActionClose"
+    bind:select="onActionSelect" cancel-text="取消" bind:cancel="closeAction" bind:click-overlay="closeAction"
+  />
 </view>

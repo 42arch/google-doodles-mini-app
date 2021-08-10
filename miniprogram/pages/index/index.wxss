@@ -1,19 +1,52 @@
 /**index.wxss**/
-.userinfo {
+.container {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+}
+
+.top {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.top .date-view {
+  background: #4c8aff;
+  height: 2.4rem;
+  line-height: 2.4rem;
+  text-align: center;
+  color: #fff;
+  width: 50%;
+}
+.top .nav-btn {
+  height: 2.4rem;
+  line-height: 2.4rem;
+  padding-right: .8rem;
+  display: flex;
+  justify-content: center;
   align-items: center;
-  color: #aaa;
 }
 
-.userinfo-avatar {
-  overflow: hidden;
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
+
+
+.logo-view {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 5rem;
 }
 
-.usermotto {
-  margin-top: 200px;
+.logo-item-view {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-item-view text {
+  padding-top: 1rem;
 }
