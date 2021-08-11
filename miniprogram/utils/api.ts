@@ -20,3 +20,26 @@ export function getDoodleByMonth(year: number, month: number):Promise<Doodle[]> 
     })
   })
 }
+
+export function getCountOfDoodles():Promise<number> {
+  return new Promise((resolve, reject) => {
+    http.get('/api/doodles').then(res => {
+      resolve(res as number)
+    }).catch(err => {
+      reject(err)
+    })
+  })
+}
+
+export function getAllDoodles(size: number, page: number, full?: string, order?: string):Promise<Doodle[]> {
+  return new Promise((resolve, reject) => {
+    let params = {
+      size, page, full, order
+    }
+    http.post('/api/doodles/all', params).then(res => {
+      resolve(res as Doodle[])
+    }).catch(err => {
+      reject(err)
+    })
+  })
+}

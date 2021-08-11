@@ -1,4 +1,5 @@
 {
+  "navigationBarTitleText": "谷歌涂鸦",
   "usingComponents": {
     "van-button": "@vant/weapp/button/index",
     "van-image": "@vant/weapp/image/index",

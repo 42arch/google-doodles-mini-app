@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "涂鸦归档",
+  "usingComponents": {
+    "van-image": "@vant/weapp/image/index"
+  }
+}

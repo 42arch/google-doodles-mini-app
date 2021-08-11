@@ -1,0 +1,23 @@
+{
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "name": "归档",
+          "pathName": "pages/archive/archive",
+          "query": "",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

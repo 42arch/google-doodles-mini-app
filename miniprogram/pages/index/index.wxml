@@ -1,33 +1,41 @@
 <!--index.wxml-->
 <view class="container">
-  <!-- <van-image width="300" height="200" fit="contain" src="https://gg.footing.dev/logos/doodles/2021/singapore-national-day-2021-6753651837109026-l.png"/>
- -->
  <view class="top">
+  <!-- <view class="ribbon">
+  </view> -->
   <view class="date-view">
     <text>{{ dateNow }}</text>
   </view>
   <view class="nav-btn">
     <van-icon name="ellipsis" color="#4c8aff" size="1.8rem" bindtap="showAction" />
-    <!-- <van-button icon="ellipsis" round="true" color="#4c8aff" size="small"/> -->
   </view>
  </view>
 
 
+ <view class="logo-view" wx:if="{{ doodlesOfToday.length > 0 }}">
+  <swiper indicator-dots="true" autoplay="false" interval="1000000" duration="800" >
+    <block wx:for="{{ doodlesOfToday }}" wx:for-index="idx" wx:for-item="doodle" wx:key="idx">
+      <swiper-item>
+        <view class="logo-item-view">
+          <view class="logo-item-img">
+            <van-image fit="widthFix" show-loading width="300" src="{{ doodle['proxy_url'] }}"></van-image>
+          </view>
+          <text>{{ doodle.title }}</text>
+        </view>
+      </swiper-item>
+    </block>
+  </swiper>
+ </view>
 
-  <view class="logo-view" wx:if="{{ doodlesOfToday.length > 0 }}">
-    <view class="logo-item-view" wx:for="{{ doodlesOfToday }}" wx:for-index="idx" wx:for-item="doodle" wx:key="idx">
-      <van-image fit="widthFix" show-loading width="300" src="{{ doodle['proxy_url'] }}"></van-image>
-      <text>{{ doodle.title }}</text>
-    </view>
-  </view>
   <view class="logo-view" wx:else>
     <view class="logo-item-view">
       <van-image fit="widthFix" show-loading width="200" src="https://gg.footing.dev/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png"></van-image>
     </view>
   </view>
 
-
-
+  <view class="lucky-view">
+    <van-button hairline color="#4c8aff" plain bind:click="showAction">手气不错</van-button>    
+  </view>
 
   <van-action-sheet show="{{ actionShow }}" actions="{{ actions }}"
     bind:close="onActionClose"
