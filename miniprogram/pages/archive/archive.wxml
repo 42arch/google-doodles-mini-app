@@ -1,21 +1,25 @@
 <view class="container">
   <view class="archive-header" wx:if="{{ countNumber > 0 }}">
-    <text>至今日，谷歌共发布了 {{ countNumber }} 个涂鸦！🖼</text>  
+    <text>到今天，谷歌发布了 {{ countNumber }} 个涂鸦！🖼</text>  
   </view>
 
   <view class="archive-doodles">
     <block wx:for="{{ allDoodles }}" wx:for-index="idx" wx:for-item="doodle" wx:key="idx">
       <view class="doodle-view">
-          <view class="doodle-img">
-            <van-image fit="widthFix" show-loading width="300" src="{{ doodle['proxy_url'] }}"></van-image>
-          </view>
-          <text>{{ doodle.title }}</text>
+        <view class="doodle-img">
+          <!-- <van-image fit="widthFix" show-loading width="200" src="{{ doodle['proxy_url'] }}"></van-image> -->
+          <image mode="widthFix" lazy-load src="{{ doodle['proxy_url'] }}"></image>
         </view>
+        <view class="doodle-info">
+          <text>{{ doodle.title }}</text>
+          <!-- <text>{{ doodle.title }}</text> -->
+        </view>
+      </view>
     </block>
   </view>
 
-  <!-- <view class="archive-tip" wx:if="{{ allDoodles.length > 0 }}">
-    <text>上滑刷新</text>
-  </view> -->
+  <view class="archive-more" wx:if="{{ allDoodles.length > 0 }}">
+    <text bindtap="loadMore">更多涂鸦</text>
+  </view>
 
 </view>

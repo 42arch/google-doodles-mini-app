@@ -32,6 +32,18 @@ Page({
       allDoodles: allDoodles
     })
   },
+  // 加载更多
+  async loadMore() {
+    this.setData({
+      currentPage : this.data.currentPage + 1
+    })
+    let moreDoodles = await getAllDoodles(this.data.pageSize, this.data.currentPage, '0', 'desc')
+
+    console.log('more', moreDoodles)
+    this.setData({
+      allDoodles : this.data.allDoodles.concat(moreDoodles)
+    })
+  },
 
   /**
    * 生命周期函数--监听页面初次渲染完成

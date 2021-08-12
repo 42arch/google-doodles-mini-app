@@ -45,10 +45,6 @@ Page({
 
     let doodlesOfToday: Doodle[] = await getDoodlesOfToday()
     // console.log(99, doodlesOfToday)
-    // this.setData({
-    //   doodlesOfToday: doodlesOfToday,
-    //   test: "测试文字"
-    // })
 
     let doodles = await getDoodleByMonth(2020, 10)
     console.log(88, doodles)
@@ -83,7 +79,15 @@ Page({
   },
 
   onActionSelect(e:any) {
-    console.log(e)
+    console.log(e.detail.name)
+    switch (e.detail.name) {
+      case "归档":
+        wx.navigateTo({url: '/pages/archive/archive'})
+        break;
+    
+      default:
+        break;
+    }
   },
 
   getUserProfile() {
