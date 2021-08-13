@@ -45,6 +45,19 @@ Page({
     })
   },
 
+  back2Top() {
+    if (wx.pageScrollTo) {
+      wx.pageScrollTo({
+        scrollTop: 0
+      })
+    } else {
+      wx.showModal({
+        title: '提示',
+        content: '当前微信版本过低，无法使用该功能，请升级到最新微信版本后重试。'
+      })
+    }
+  },
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -84,7 +97,7 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom() {
-
+    this.loadMore()
   },
 
   /**

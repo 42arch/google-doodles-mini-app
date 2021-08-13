@@ -3,23 +3,36 @@
     <text>到今天，谷歌发布了 {{ countNumber }} 个涂鸦！🖼</text>  
   </view>
 
-  <view class="archive-doodles">
-    <block wx:for="{{ allDoodles }}" wx:for-index="idx" wx:for-item="doodle" wx:key="idx">
-      <view class="doodle-view">
-        <view class="doodle-img">
-          <!-- <van-image fit="widthFix" show-loading width="200" src="{{ doodle['proxy_url'] }}"></van-image> -->
-          <image mode="widthFix" lazy-load src="{{ doodle['proxy_url'] }}"></image>
+  <scroll-view>
+    <view class="archive-doodles">
+      <block wx:for="{{ allDoodles }}" wx:for-index="idx" wx:for-item="doodle" wx:key="idx">
+        <view class="doodle-view">
+          <view class="doodle-img">
+            <!-- <van-image fit="widthFix" show-loading width="200" src="{{ doodle['proxy_url'] }}"></van-image> -->
+            <image mode="widthFix" lazy-load src="{{ doodle['proxy_url'] }}"></image>
+          </view>
+          <view class="doodle-info">
+            <text>{{ doodle.title }}</text>
+            <!-- <text>{{ doodle.title }}</text> -->
+          </view>
         </view>
-        <view class="doodle-info">
-          <text>{{ doodle.title }}</text>
-          <!-- <text>{{ doodle.title }}</text> -->
-        </view>
-      </view>
-    </block>
-  </view>
+      </block>
+    </view>
 
-  <view class="archive-more" wx:if="{{ allDoodles.length > 0 }}">
-    <text bindtap="loadMore">更多涂鸦</text>
-  </view>
+    <view class="archive-btns">
+      <view class="btn">
+        <van-icon name="filter-o" />
+      </view>
+      <view class="btn" bindtap="back2Top">
+        <van-icon name="back-top" />
+      </view>
+    </view>
+
+    <view class="archive-more" wx:if="{{ allDoodles.length > 0 }}">
+      <text bindtap="loadMore">更多涂鸦</text>
+    </view>    
+  </scroll-view>>
+
+
 
 </view>

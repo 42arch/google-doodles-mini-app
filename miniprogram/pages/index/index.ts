@@ -13,8 +13,8 @@ Page({
     actions: [
       { name: '去年今日' },
       { name: '归档' },
-      { name: '精选' },
-      { name: '随机' }
+      // { name: '精选' },
+      // { name: '随机' }
     ],
 
     userInfo: {},
