@@ -20,8 +20,8 @@
       </block>
     </view>
 
-    <view class="archive-btns" bindtap="filterShow">
-      <view class="btn">
+    <view class="archive-btns" >
+      <view class="btn" bindtap="filterShow">
         <van-icon name="filter-o" />
       </view>
       <view class="btn" bindtap="back2Top">
@@ -31,7 +31,7 @@
 
     <view class="archive-more" wx:if="{{ allDoodles.length > 0 }}">
       <text bindtap="loadMore">更多涂鸦</text>
-    </view>    
+    </view>
   </scroll-view>>
 
 
@@ -39,5 +39,18 @@
     bind:close="onActionClose"
     bind:select="onActionSelect" cancel-text="取消" bind:cancel="closeAction" bind:click-overlay="closeAction"
   />
+
+  <van-overlay show="{{ datePickerShow }}" bind:click="onClickHide" >
+    <view class="wrapper">
+      <van-datetime-picker
+        type="date"
+        value="{{ currentDate }}"
+        bind:confirm="onDateConfirm"
+        bind:cancel="onCancel"
+        min-date="{{ minDate }}"
+        formatter="{{ formatter }}"
+      />
+    </view>
+  </van-overlay>
 
 </view>

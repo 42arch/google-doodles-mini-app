@@ -13,15 +13,49 @@ Page({
     currentPage: 1,
     order: "desc",
 
+    datePickerShow: false,
+    datePicked: "",
+
     filterActionShow: false,
     filterAction: [
       { code: 'order', name: '正序排列' },
       { code: 'startDate', name: '起始日期' },
     ],
 
+    currentDate: new Date().getTime(),
+    minDate: new Date().getTime(),
+    formatter(type: string, value: string) {
+      if (type === 'year') {
+        return `${value}年`;
+      } 
+      if (type === 'month') {
+        return `${value}月`;
+      }
+      return value;
+    },
+
     allDoodles: [] as Doodle[]
   },
 
+  onDateConfirm(e: any) {
+    console.log('选中日期', e.detail)
+    let date = new Date(e.detail)
+    console.log(date.getFullYear(), date.getMonth() + 1, date.getDate())
+    this.onCancel()
+  },
+
+  onCancel() {
+    this.setData({
+      datePickerShow: false
+    })
+  },
+
+  onInput(e: any) {
+    console.log('datetime', e)
+    this.setData({
+      currentDate: e.detail,
+    });
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -79,13 +113,19 @@ Page({
             ]
           })
         }
-        this.reset(e.detail.name)
+        this.reset()
 
         this.closeAction()
-        break;
-    
+        break
+
+      case 'startDate': 
+        this.setData({
+          datePickerShow: true
+        })
+        this.closeAction()
+        break
       default:
-        break;
+        break
     }
   },
 
@@ -95,7 +135,7 @@ Page({
     })
   },
 
-  async reset(order: string) {
+  async reset() {
     this.setData({
       pageSize: 10,
       currentPage: 1,
