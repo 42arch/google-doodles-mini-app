@@ -12,14 +12,15 @@
             <image mode="widthFix" lazy-load src="{{ doodle['proxy_url'] }}"></image>
           </view>
           <view class="doodle-info">
-            <text>{{ doodle.title }}</text>
+            <text class="title_txt">{{ doodle.title }}</text>
+            <text class="date_txt">{{ doodle.date_year }}年{{ doodle.date_month }}月{{ doodle.date_day }}日</text>
             <!-- <text>{{ doodle.title }}</text> -->
           </view>
         </view>
       </block>
     </view>
 
-    <view class="archive-btns">
+    <view class="archive-btns" bindtap="filterShow">
       <view class="btn">
         <van-icon name="filter-o" />
       </view>
@@ -34,5 +35,9 @@
   </scroll-view>>
 
 
+  <van-action-sheet show="{{ filterActionShow }}" actions="{{ filterAction }}"
+    bind:close="onActionClose"
+    bind:select="onActionSelect" cancel-text="取消" bind:cancel="closeAction" bind:click-overlay="closeAction"
+  />
 
 </view>

@@ -45,6 +45,12 @@
   align-items: flex-start;
 }
 
+.doodle-view .date_txt {
+  margin-top: 0.1rem;
+  font-size: 0.7rem;
+  color: #bbb;
+}
+
 .archive-btns {
   position: fixed;
   bottom: 1rem;

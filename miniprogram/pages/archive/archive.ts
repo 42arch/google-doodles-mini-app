@@ -11,6 +11,13 @@ Page({
     countNumber: 0,
     pageSize: 10,
     currentPage: 1,
+    order: "desc",
+
+    filterActionShow: false,
+    filterAction: [
+      { code: 'order', name: '正序排列' },
+      { code: 'startDate', name: '起始日期' },
+    ],
 
     allDoodles: [] as Doodle[]
   },
@@ -24,9 +31,7 @@ Page({
       countNumber: countNumber
     })
 
-    let allDoodles = await getAllDoodles(this.data.pageSize, this.data.currentPage, '0', 'desc')
-
-    console.log(66, allDoodles)
+    let allDoodles = await getAllDoodles(this.data.pageSize, this.data.currentPage, '0', this.data.order)
 
     this.setData({
       allDoodles: allDoodles
@@ -37,15 +42,74 @@ Page({
     this.setData({
       currentPage : this.data.currentPage + 1
     })
-    let moreDoodles = await getAllDoodles(this.data.pageSize, this.data.currentPage, '0', 'desc')
-
-    console.log('more', moreDoodles)
+    let moreDoodles = await getAllDoodles(this.data.pageSize, this.data.currentPage, '0', this.data.order)
     this.setData({
       allDoodles : this.data.allDoodles.concat(moreDoodles)
     })
   },
 
-  back2Top() {
+  filterShow(): void {
+    this.setData({
+      filterActionShow: true
+    })
+  },
+
+  onActionClose() {
+
+  },
+
+  onActionSelect(e: any): void {
+    console.log(111, e.detail)
+    switch (e.detail.code) {
+      case 'order':
+        if(e.detail.name === '倒序排列') {
+          this.setData({
+            order: "desc",
+            filterAction : [
+              { code: 'order', name: '正序排列' },
+              { code: 'startDate', name: '起始日期' },
+            ]
+          })
+        } else {
+          this.setData({
+            order: "asc",
+            filterAction : [
+              { code: 'order', name: '倒序排列' },
+              { code: 'startDate', name: '起始日期' },
+            ]
+          })
+        }
+        this.reset(e.detail.name)
+
+        this.closeAction()
+        break;
+    
+      default:
+        break;
+    }
+  },
+
+  closeAction() {
+    this.setData({
+      filterActionShow: false
+    })
+  },
+
+  async reset(order: string) {
+    this.setData({
+      pageSize: 10,
+      currentPage: 1,
+      allDoodles: []
+    })
+
+    let allDoodles = await getAllDoodles(this.data.pageSize, this.data.currentPage, '0', this.data.order)
+    this.setData({
+      allDoodles: allDoodles
+    })
+    
+  },
+
+  back2Top(): void {
     if (wx.pageScrollTo) {
       wx.pageScrollTo({
         scrollTop: 0
