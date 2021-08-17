@@ -12,9 +12,9 @@ Page({
     pageSize: 10,
     currentPage: 1,
     order: "desc",
-
     datePickerShow: false,
     datePicked: "",
+    startDate: {},
 
     filterActionShow: false,
     filterAction: [
@@ -23,15 +23,16 @@ Page({
     ],
 
     currentDate: new Date().getTime(),
-    minDate: new Date().getTime(),
+    minDate: new Date(1999, 10, 31).getTime(),
+    maxDate: new Date().getTime(),
     formatter(type: string, value: string) {
       if (type === 'year') {
-        return `${value}年`;
-      } 
-      if (type === 'month') {
-        return `${value}月`;
+        return `${value}年`
       }
-      return value;
+      if (type === 'month') {
+        return `${value}月`
+      }
+      return value
     },
 
     allDoodles: [] as Doodle[]
@@ -40,7 +41,20 @@ Page({
   onDateConfirm(e: any) {
     console.log('选中日期', e.detail)
     let date = new Date(e.detail)
-    console.log(date.getFullYear(), date.getMonth() + 1, date.getDate())
+    let year = date.getFullYear()
+    let month = date.getMonth() + 1
+    let day = date.getDate()
+    let startDate = {
+      year: year,
+      month: month,
+      day: day
+    }
+    console.log(startDate)
+    this.setData({
+      startDate: startDate
+    })
+    this.reset(startDate)
+
     this.onCancel()
   },
 
@@ -48,6 +62,10 @@ Page({
     this.setData({
       datePickerShow: false
     })
+  },
+
+  onClickHide() {
+    this.onCancel()
   },
 
   onInput(e: any) {
@@ -60,12 +78,21 @@ Page({
    * 生命周期函数--监听页面加载
    */
   async onLoad() {
+    let dateNow = new Date()
+    let startDate = {
+      year: dateNow.getFullYear(),
+      month: dateNow.getMonth() + 1,
+      day: dateNow.getDate()
+    }
+    this.setData({
+      startDate: startDate
+    })
     let countNumber = await getCountOfDoodles()
     this.setData({
       countNumber: countNumber
     })
 
-    let allDoodles = await getAllDoodles(this.data.pageSize, this.data.currentPage, '0', this.data.order)
+    let allDoodles = await getAllDoodles(this.data.pageSize, this.data.currentPage, '0', this.data.order, this.data.startDate)
 
     this.setData({
       allDoodles: allDoodles
@@ -76,7 +103,7 @@ Page({
     this.setData({
       currentPage : this.data.currentPage + 1
     })
-    let moreDoodles = await getAllDoodles(this.data.pageSize, this.data.currentPage, '0', this.data.order)
+    let moreDoodles = await getAllDoodles(this.data.pageSize, this.data.currentPage, '0', this.data.order, this.data.startDate)
     this.setData({
       allDoodles : this.data.allDoodles.concat(moreDoodles)
     })
@@ -93,7 +120,6 @@ Page({
   },
 
   onActionSelect(e: any): void {
-    console.log(111, e.detail)
     switch (e.detail.code) {
       case 'order':
         if(e.detail.name === '倒序排列') {
@@ -135,14 +161,15 @@ Page({
     })
   },
 
-  async reset() {
+  async reset(startDate?: object) {
     this.setData({
       pageSize: 10,
       currentPage: 1,
-      allDoodles: []
+      allDoodles: [],
+      startDate: startDate
     })
 
-    let allDoodles = await getAllDoodles(this.data.pageSize, this.data.currentPage, '0', this.data.order)
+    let allDoodles = await getAllDoodles(this.data.pageSize, this.data.currentPage, '0', this.data.order, startDate)
     this.setData({
       allDoodles: allDoodles
     })

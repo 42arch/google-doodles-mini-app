@@ -31,10 +31,10 @@ export function getCountOfDoodles():Promise<number> {
   })
 }
 
-export function getAllDoodles(size: number, page: number, full?: string, order?: string):Promise<Doodle[]> {
+export function getAllDoodles(size: number, page: number, full?: string, order?: string, startDate?: object):Promise<Doodle[]> {
   return new Promise((resolve, reject) => {
     let params = {
-      size, page, full, order
+      size, page, full, order, startDate
     }
     http.post('/api/doodles/all', params).then(res => {
       resolve(res as Doodle[])

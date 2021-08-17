@@ -1,9 +1,9 @@
 // index.ts
 import { Doodle } from "../../type/Doodle.type"
-import { getDoodleByMonth, getDoodlesOfToday } from "../../utils/api"
+import { getDoodlesOfToday } from "../../utils/api"
 
 // 获取应用实例
-const app = getApp<any>()
+// const app = getApp<any>()
 
 Page({
   data: {
@@ -34,23 +34,10 @@ Page({
     this.setData({
       dateNow: dateNow
     })
-    // @ts-ignore
-    // if (wx.getUserProfile) {
-    //   this.setData({
-    //     canIUseGetUserProfile: true
-    //   })
-    // }
-    console.log(app)
-
-
     let doodlesOfToday: Doodle[] = await getDoodlesOfToday()
-    // console.log(99, doodlesOfToday)
 
-    let doodles = await getDoodleByMonth(2020, 10)
-    console.log(88, doodles)
     this.setData({
       doodlesOfToday: doodlesOfToday,
-      test:"测试文字"
     })
   },
 
@@ -83,10 +70,10 @@ Page({
     switch (e.detail.name) {
       case "归档":
         wx.navigateTo({url: '/pages/archive/archive'})
-        break;
-    
+        this.closeAction()
+        break
       default:
-        break;
+        break
     }
   },
 
