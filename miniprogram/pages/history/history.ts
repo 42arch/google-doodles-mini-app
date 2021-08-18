@@ -1,18 +1,48 @@
 // {{page}}.ts
+import { getHistoryOfToday } from "../../utils/api"
+import { Doodle } from "../../type/Doodle.type"
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    data: [] as { year: number, list: Doodle[] }[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad() {
+  async onLoad() {
+    let doodles = await getHistoryOfToday()
+    let groupData = this.groupDataByYear(doodles)
+    console.log(1143, groupData)
 
+    this.setData({
+      data: groupData
+    })
+  },
+
+  groupDataByYear(doodles: Doodle[]): {year: number, list: Doodle[]}[] {
+    let keys: any[] = []
+    let newData: {year: number, list: Doodle[]}[] = []
+
+    doodles.forEach(doodle => {
+      if(!keys.includes(doodle.date_year.toString())) {
+        newData.push({
+          year: doodle.date_year,
+          list: [doodle]
+        })
+      } else {
+        newData.forEach(item => {
+          if(item.year == doodle.date_year) {
+            item.list.push(doodle)
+          }
+        })
+      }
+    })
+    return newData
   },
 
   /**

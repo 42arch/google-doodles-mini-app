@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "涂鸦归档",
+  "navigationBarTitleText": "涂鸦存档",
   "usingComponents": {
     "van-image": "@vant/weapp/image/index",
     "van-icon": "@vant/weapp/icon/index",

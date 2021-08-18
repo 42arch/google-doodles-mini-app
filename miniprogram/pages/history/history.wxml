@@ -1,2 +1,19 @@
-<!--{{page}}.wxml-->
-<text>{{page}}.wxml</text>
+<view class="history-view">
+
+  <block wx:for="{{ data }}" wx:for-index="idx" wx:for-item="item" wx:key="idx">
+    <view class="year-group-view">
+      <view class="date-view">
+        <text>{{ item.year }}</text>
+      </view>
+
+      <view class="doodle-list-view">
+        <view class="doodle-view" wx:for="{{ item.list }}" wx:for-index="index" wx:for-item="doodle" wx:key="index">
+          <text>{{ doodle.title }}</text>
+          <van-image fit="widthFix" show-loading width="300" height="200" src="{{ doodle['proxy_url'] }}"></van-image>
+        </view>
+      </view>
+    </view>
+
+  </block>
+
+</view>

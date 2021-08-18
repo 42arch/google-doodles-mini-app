@@ -1,1 +1,41 @@
-/* {{page}}.wxss */
+.history-view {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.history-view .year-group-view {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 96%;
+  /* padding-bottom: 1rem; */
+  border-top: 1px dashed #bbb;
+}
+
+.year-group-view .date-view {
+  background: #4c8aff;
+  height: 2rem;
+  line-height: 2rem;
+  text-align: center;
+  color: #fff;
+  align-self: flex-start;
+  width: 6rem;
+}
+
+.year-group-view .doodle-list-view {
+  padding-top: 1rem
+}
+
+.doodle-view {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.doodle-view text {
+  text-align: center;
+}

@@ -11,8 +11,8 @@ Page({
     doodlesOfToday: [] as Doodle[],
     actionShow: false,
     actions: [
-      { name: '去年今日' },
-      { name: '归档' },
+      { name: '历史上的今天', id: 'history' },
+      { name: '涂鸦存档', id: 'archive' },
       // { name: '精选' },
       // { name: '随机' }
     ],
@@ -67,10 +67,13 @@ Page({
 
   onActionSelect(e:any) {
     console.log(e.detail.name)
-    switch (e.detail.name) {
-      case "归档":
+    switch (e.detail.id) {
+      case "archive":
         wx.navigateTo({url: '/pages/archive/archive'})
         this.closeAction()
+        break
+      case "history":
+        wx.navigateTo({url: '/pages/history/history'})
         break
       default:
         break

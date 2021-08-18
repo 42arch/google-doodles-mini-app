@@ -20,7 +20,7 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
+  width: 96%;
   min-height: 6rem;
   padding-top: 1.2rem;
   padding-bottom: .7rem;

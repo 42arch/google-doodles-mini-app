@@ -27,7 +27,7 @@
     "paths": {
       "@vant/weapp/*": ["node_modules/@vant/weapp/*"]
     },
-    "lib": ["ES6"]
+    "lib": ["ESNEXT"]
   },
   "include": [
     "./**/*.ts"

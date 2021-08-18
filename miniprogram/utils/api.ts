@@ -11,6 +11,16 @@ export function getDoodlesOfToday():Promise<Doodle[]> {
   })
 }
 
+export function getHistoryOfToday(): Promise<Doodle[]> {
+  return new Promise((resolve, reject) => {
+    http.get("/api/doodles/history").then(res => {
+      resolve(res as Doodle[])
+    }).catch(err => {
+      reject(err)
+    })
+  })
+}
+
 export function getDoodleByMonth(year: number, month: number):Promise<Doodle[]> {
   return new Promise((resolve, reject) => {
     http.get(`/api/doodles/json/${year}/${month}`).then(res => {
