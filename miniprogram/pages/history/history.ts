@@ -17,8 +17,6 @@ Page({
   async onLoad() {
     let doodles = await getHistoryOfToday()
     let groupData = this.groupDataByYear(doodles)
-    console.log(1143, groupData)
-
     this.setData({
       data: groupData
     })
@@ -34,6 +32,7 @@ Page({
           year: doodle.date_year,
           list: [doodle]
         })
+        keys.push(doodle.date_year.toString())
       } else {
         newData.forEach(item => {
           if(item.year == doodle.date_year) {

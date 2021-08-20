@@ -3,7 +3,7 @@
   <block wx:for="{{ data }}" wx:for-index="idx" wx:for-item="item" wx:key="idx">
     <view class="year-group-view">
       <view class="date-view">
-        <text>{{ item.year }}</text>
+        <text>{{ item.year }}年</text>
       </view>
 
       <view class="doodle-list-view">

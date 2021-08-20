@@ -74,6 +74,7 @@ Page({
         break
       case "history":
         wx.navigateTo({url: '/pages/history/history'})
+        this.closeAction()
         break
       default:
         break
