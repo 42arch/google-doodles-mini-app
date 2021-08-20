@@ -23,6 +23,12 @@
           "pathName": "pages/history/history",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "pages/about/doodle/doodle",
+          "pathName": "pages/about/doodle/doodle",
+          "query": "",
+          "scene": null
         }
       ]
     }

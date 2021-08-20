@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "关于谷歌涂鸦",
+  "usingComponents": {
+    "van-divider": "@vant/weapp/divider/index"
+  }
+}

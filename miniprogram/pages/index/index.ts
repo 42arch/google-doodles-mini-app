@@ -13,6 +13,7 @@ Page({
     actions: [
       { name: '历史上的今天', id: 'history' },
       { name: '涂鸦存档', id: 'archive' },
+      { name: '关于', id: 'about' }
       // { name: '精选' },
       // { name: '随机' }
     ],
@@ -75,6 +76,9 @@ Page({
       case "history":
         wx.navigateTo({url: '/pages/history/history'})
         this.closeAction()
+        break
+      case "about":
+        wx.navigateTo({url: '/pages/about/about'})
         break
       default:
         break

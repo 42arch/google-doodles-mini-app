@@ -3,7 +3,9 @@
     "pages/index/index",
     "pages/logs/logs",
     "pages/archive/archive",
-    "pages/history/history"
+    "pages/history/history",
+    "pages/about/about",
+    "pages/about/doodle/doodle"
   ],
   "window": {
     "backgroundTextStyle": "light",
