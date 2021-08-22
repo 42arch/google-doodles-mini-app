@@ -79,6 +79,7 @@ Page({
         break
       case "about":
         wx.navigateTo({url: '/pages/about/about'})
+        this.closeAction()
         break
       default:
         break

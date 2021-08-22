@@ -1,8 +1,7 @@
 <view>
-  <van-cell title="关于Google Doodle" 
+  <van-cell title="关于Doodle" 
     is-link 
-    link-type="navigateTo"
-    url="/pages/about/doodle/doodle" />
-  <van-cell title="关于此小程序" 
+    link-type="navigateTo"/>
+  <van-cell title="关于小程序" 
     is-link />
 </view>
