@@ -4,11 +4,13 @@
     <text>v1.2.0</text>
   </view>
   <view class="about-view">
-    <van-cell title="关于Doodle" 
+    <van-cell title="关于谷歌涂鸦" 
       is-link 
       link-type="navigateTo"/>
     <van-cell title="关于小程序" 
-      is-link />
+      is-link
+      link-type="navigateTo"
+      url="/pages/about/logs/logs" />
   </view>
 
 </view>

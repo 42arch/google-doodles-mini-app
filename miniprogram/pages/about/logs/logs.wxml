@@ -1,0 +1,50 @@
+<view class="container">
+  <view class="about">
+    <!-- <van-divider
+      contentPosition="center"
+      customStyle="color: #323233; border-color: #48bed9; font-size: .8rem;"
+    >
+      关于
+    </van-divider> -->
+  </view>
+
+  <view class="logs">
+    <van-divider
+      contentPosition="center"
+      customStyle="color: #323233; border-color: #48bed9; font-size: .8rem;"
+    >
+      更新日志
+    </van-divider>
+
+    <view class="log">
+      <view class="info">
+        <text class="date">2021/08/25</text>
+        <text class="version">v1.3.0</text>
+      </view>
+      <view class="desc">
+        <text>1. UI调整; \n 2. 修复bug。</text>
+      </view>
+    </view>
+
+    <view class="log">
+      <view class="info">
+        <text class="date">2021/08/22</text>
+        <text class="version">v1.2.0</text>
+      </view>
+      <view class="desc">
+        <text>1. 新增历史上的今天; \n 2. 修复bug。</text>
+      </view>
+    </view>
+
+    <view class="log">
+      <view class="info">
+        <text class="date">2021/08  日期忘了</text>
+        <text class="version">v1.0.0</text>
+      </view>
+
+      <view class="desc">
+        上线。
+      </view>
+    </view>
+  </view>
+</view>

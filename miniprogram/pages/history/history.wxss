@@ -38,4 +38,6 @@
 
 .doodle-view text {
   text-align: center;
+  color: #323233;
+  padding-bottom: .8rem;
 }

@@ -4,8 +4,9 @@
     "pages/logs/logs",
     "pages/archive/archive",
     "pages/history/history",
-    "pages/about/about"
-    ],
+    "pages/about/about",
+    "pages/about/logs/logs"
+  ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
