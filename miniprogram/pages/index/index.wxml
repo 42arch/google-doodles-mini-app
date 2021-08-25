@@ -7,7 +7,7 @@
     <text>{{ dateNow }}</text>
   </view>
   <view class="nav-btn">
-    <van-icon name="ellipsis" color="#4c8aff" size="1.8rem" bindtap="showAction" />
+    <van-icon name="ellipsis" color="#48bed8" size="1.8rem" bindtap="showAction" />
   </view>
  </view>
 
@@ -34,7 +34,14 @@
   </view>
 
   <view class="lucky-view">
-    <van-button hairline color="#4c8aff" plain bind:click="showAction">手气不错</van-button>    
+    <view class="band-view">
+      <view class="band-item-view" style="background-color: #48bed8;"></view>
+      <view class="band-item-view" style="background-color: #00a698;"></view>
+      <view class="band-item-view" style="background-color: #fde650;"></view>
+      <view class="band-item-view" style="background-color: #e95065;"></view>
+
+    </view>
+    <van-button hairline color="#00a698" plain bind:click="showAction">手气不错</van-button>    
   </view>
 
   <van-action-sheet show="{{ actionShow }}" actions="{{ actions }}"

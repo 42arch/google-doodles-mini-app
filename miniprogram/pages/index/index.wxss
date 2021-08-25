@@ -22,7 +22,7 @@
 } */
 
 .top .date-view {
-  background: #4c8aff;
+  background: #48bed8;
   height: 2.4rem;
   line-height: 2.4rem;
   text-align: center;
@@ -71,12 +71,25 @@
 .logo-item-view text {
   /* padding-top: 1rem; */
   text-align: center;
+  color: #323233;
 }
 
 .lucky-view {
   padding-top: 3rem;
   width: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+/* #cee0f4 */
+.lucky-view .band-view {
+  display: flex;
+  height: 2rem;
+  width: 80%;
+}
+
+.band-item-view {
+  height: .6rem;
+  width: 25%;
 }

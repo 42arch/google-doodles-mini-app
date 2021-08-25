@@ -29,6 +29,12 @@
           "pathName": "pages/about/doodle/doodle",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "pages/about/about",
+          "pathName": "pages/about/about",
+          "query": "",
+          "scene": null
         }
       ]
     }

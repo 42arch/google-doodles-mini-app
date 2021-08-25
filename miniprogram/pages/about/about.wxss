@@ -1,1 +1,31 @@
-/* {{page}}.wxss */
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100%;
+  color: #323233;
+}
+
+.logo-view {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 3rem;
+  height: 10rem;
+}
+
+.logo-view image {
+  width: 5rem;
+  height: 5rem;
+}
+
+.logo-view text {
+  margin-top: 1rem;
+  color: #bbb;
+  font-size: .8rem;
+}
+
+.about-view {
+  width: 100%;
+}

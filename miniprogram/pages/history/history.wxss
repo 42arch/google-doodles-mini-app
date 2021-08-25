@@ -12,11 +12,11 @@
   align-items: center;
   width: 96%;
   /* padding-bottom: 1rem; */
-  border-top: 1px dashed #bbb;
+  border-top: 1px dashed #cee0f4;
 }
 
 .year-group-view .date-view {
-  background: #4c8aff;
+  background: #00a698;
   height: 2rem;
   line-height: 2rem;
   text-align: center;

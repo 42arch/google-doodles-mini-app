@@ -1,10 +1,13 @@
-/* {{page}}.wxss */
-
 .container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding-bottom: 3rem;
+}
+
+.archive-header {
+  padding: 0.5rem 1rem;
+  color: #323233;
 }
 
 .archive-doodles {
@@ -24,7 +27,7 @@
   min-height: 6rem;
   padding-top: 1.2rem;
   padding-bottom: .7rem;
-  border-top: 1px dashed #bbb;
+  border-top: 1px dashed #cee0f4;
   border-radius: .5rem;
 }
 
@@ -45,6 +48,10 @@
   align-items: flex-start;
 }
 
+.doodle-view .title_txt {
+  color: #323233;
+}
+
 .doodle-view .date_txt {
   margin-top: 0.1rem;
   font-size: 0.7rem;
@@ -63,7 +70,7 @@
   width: 2.7rem;
   height: 2.7rem;
   margin-top: .5rem;
-  background-color: #4c8aff;
+  background-color: #00a698;
   color: #fff;
   display: flex;
   justify-content: center;

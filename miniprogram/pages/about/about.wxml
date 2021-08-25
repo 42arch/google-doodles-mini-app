@@ -1,7 +1,14 @@
-<view>
-  <van-cell title="关于Doodle" 
-    is-link 
-    link-type="navigateTo"/>
-  <van-cell title="关于小程序" 
-    is-link />
+<view class="container">
+  <view class="logo-view">
+    <image mode="aspectFit" src="../../assets/logo.png"></image>
+    <text>v1.2.0</text>
+  </view>
+  <view class="about-view">
+    <van-cell title="关于Doodle" 
+      is-link 
+      link-type="navigateTo"/>
+    <van-cell title="关于小程序" 
+      is-link />
+  </view>
+
 </view>
