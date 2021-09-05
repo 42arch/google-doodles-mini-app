@@ -1,8 +1,6 @@
 <!--index.wxml-->
 <view class="container">
  <view class="top">
-  <!-- <view class="ribbon">
-  </view> -->
   <view class="date-view">
     <text>{{ dateNow }}</text>
   </view>
@@ -16,7 +14,7 @@
   <swiper indicator-dots="true" autoplay="false" interval="10000" duration="800" >
     <block wx:for="{{ doodlesOfToday }}" wx:for-index="idx" wx:for-item="doodle" wx:key="idx">
       <swiper-item>
-        <view class="logo-item-view">
+        <view bindtap="goToDetail" data-id="{{ doodle.id }}" class="logo-item-view">
           <view class="logo-item-img">
             <van-image fit="widthFix" show-loading width="300" src="{{ doodle['proxy_url'] }}"></van-image>
           </view>
@@ -39,7 +37,6 @@
       <view class="band-item-view" style="background-color: #00a698;"></view>
       <view class="band-item-view" style="background-color: #fde650;"></view>
       <view class="band-item-view" style="background-color: #e95065;"></view>
-
     </view>
     <van-button hairline color="#00a698" plain bind:click="showAction">手气不错</van-button>    
   </view>

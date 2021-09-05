@@ -1,7 +1,7 @@
 <view class="container">
   <view class="logo-view">
     <image mode="aspectFit" src="../../assets/logo.png"></image>
-    <text>v1.2.0</text>
+    <text>{{ version }}</text>
   </view>
   <view class="about-view">
     <van-cell title="关于谷歌涂鸦" 

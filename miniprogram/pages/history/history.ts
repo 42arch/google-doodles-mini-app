@@ -22,6 +22,13 @@ Page({
     })
   },
 
+  goToDetail(e: any): void {
+    console.log(e.currentTarget.dataset.id)
+    wx.navigateTo({
+      url: `/pages/detail/detail?id=${e.currentTarget.dataset.id}`
+    })
+  },
+
   groupDataByYear(doodles: Doodle[]): {year: number, list: Doodle[]}[] {
     let keys: any[] = []
     let newData: {year: number, list: Doodle[]}[] = []

@@ -7,10 +7,13 @@
       </view>
 
       <view class="doodle-list-view">
-        <view class="doodle-view" wx:for="{{ item.list }}" wx:for-index="index" wx:for-item="doodle" wx:key="index">
-          <text>{{ doodle.title }}</text>
-          <van-image fit="widthFix" show-loading width="300" height="200" src="{{ doodle['proxy_url'] }}"></van-image>
-        </view>
+        <block wx:for="{{ item.list }}" wx:for-index="index" wx:for-item="doodle" wx:key="index">
+          <view bindtap="goToDetail" data-id="{{ doodle.id }}" class="doodle-view">
+            <text>{{ doodle.title }}</text>
+            <van-image fit="widthFix" show-loading width="300" height="200" src="{{ doodle['proxy_url'] }}"></van-image>
+          </view>
+        </block>
+
       </view>
     </view>
 

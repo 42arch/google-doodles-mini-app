@@ -1,12 +1,12 @@
 <view class="container">
   <view class="archive-header" wx:if="{{ countNumber > 0 }}">
-    <text>到今天，谷歌发布了 {{ countNumber }} 个涂鸦！🖼</text>  
+    <text>到今天，谷歌一共发布了 {{ countNumber }} 个涂鸦！🎈</text>
   </view>
 
   <scroll-view>
     <view class="archive-doodles">
       <block wx:for="{{ allDoodles }}" wx:for-index="idx" wx:for-item="doodle" wx:key="idx">
-        <view class="doodle-view">
+        <view bindtap="goToDetail" data-id="{{ doodle.id }}" class="doodle-view">
           <view class="doodle-img">
             <!-- <van-image fit="widthFix" show-loading width="200" src="{{ doodle['proxy_url'] }}"></van-image> -->
             <image mode="widthFix" lazy-load src="{{ doodle['proxy_url'] }}"></image>
@@ -14,7 +14,6 @@
           <view class="doodle-info">
             <text class="title_txt">{{ doodle.title }}</text>
             <text class="date_txt">{{ doodle.date_year }}年{{ doodle.date_month }}月{{ doodle.date_day }}日</text>
-            <!-- <text>{{ doodle.title }}</text> -->
           </view>
         </view>
       </block>
@@ -32,7 +31,7 @@
     <view class="archive-more" wx:if="{{ allDoodles.length > 0 }}">
       <text bindtap="loadMore">更多涂鸦</text>
     </view>
-  </scroll-view>>
+  </scroll-view>
 
 
   <van-action-sheet show="{{ filterActionShow }}" actions="{{ filterAction }}"

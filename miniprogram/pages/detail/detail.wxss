@@ -1,0 +1,95 @@
+.container {
+  width: calc(100% - 2rem);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  justify-content: center;
+  padding: 1rem 1rem 0 1rem;
+}
+
+.doodle-img {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.doodle-img image {
+  width: 100%;
+}
+
+.doodle-title {
+  margin-top: 1rem;
+  padding: 1rem;
+  border: 1px solid #cee0f4;
+  border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+}
+
+.doodle-title .date-text {
+  color: #bbb;
+  font-size: .8rem;
+}
+
+.doodle-title .title-text {
+  color: #323233;
+  padding: .5rem 0;
+}
+
+.doodle-title .title-en-text {
+  color: #bbb;
+  font-size: .8rem;
+  font-style: italic;
+}
+
+.doodle-tags {
+  margin: .5rem;
+}
+
+.doodle-tags .doodle-tag {
+  margin: .3rem;
+  padding: .3rem;
+}
+
+.doodle-info {
+  margin-top: 1rem;
+}
+
+.doodle-footer {
+  position: absolute;
+  bottom: 0;
+  width: calc(100% - 2rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: .7rem;
+  color: #323233;
+}
+
+.regions-view {
+  font-size: .8rem;
+  margin: 1rem;
+  margin-top: 2.5rem;
+  width: calc(100% - 2rem);
+  margin-bottom: 2rem;
+}
+
+.regions-view .region-tag {
+  margin: .3rem;
+  padding: .3rem;
+}
+
+.blog-view {
+  font-size: .75rem;
+  margin: .7rem;
+  margin-top: 2.5rem;
+  width: calc(100% - 2.4rem);
+  color: #323233;
+  margin-bottom: 2rem;
+  border: 1px dashed #cee0f4;
+  border-radius: 3px;
+  padding: .5rem;
+}

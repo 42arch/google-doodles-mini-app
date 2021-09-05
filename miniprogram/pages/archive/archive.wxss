@@ -10,6 +10,10 @@
   color: #323233;
 }
 
+.archive-header text {
+  text-align: center;
+}
+
 .archive-doodles {
   display: flex;
   flex-direction: column;

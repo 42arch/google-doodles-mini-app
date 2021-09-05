@@ -11,6 +11,19 @@ export function getDoodlesOfToday():Promise<Doodle[]> {
   })
 }
 
+export function getDetailById(id: string): Promise<Doodle> {
+  return new Promise((resolve, reject) => {
+    let params: object = {
+      id
+    }
+    http.post("/api/doodles/detail", params).then(res => {
+      resolve( res as Doodle)
+    }).catch(err => {
+      reject(err)
+    })
+  })
+}
+
 export function getHistoryOfToday(): Promise<Doodle[]> {
   return new Promise((resolve, reject) => {
     http.get("/api/doodles/history").then(res => {

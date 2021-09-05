@@ -5,7 +5,8 @@
     "pages/archive/archive",
     "pages/history/history",
     "pages/about/about",
-    "pages/about/logs/logs"
+    "pages/about/logs/logs",
+    "pages/detail/detail"
   ],
   "window": {
     "backgroundTextStyle": "light",

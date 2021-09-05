@@ -1,0 +1,45 @@
+<view class="container" wx:if="{{ doodle_info }}">
+  <view class="doodle-img">
+    <van-image fit="widthFix" show-loading width="380" height="200" src="{{ doodle_info['proxy_url'] }}"></van-image>
+  </view>
+
+  <view class="doodle-title">
+    <text class="date-text">{{ doodle_info['date_year'] + '年' + doodle_info['date_month'] + '月' + doodle_info['date_day'] + '日' }}</text>
+    <text class="title-text">{{ doodle_info['title'] }}</text>
+    <text class="title-en-text">{{ doodle_title_en }}</text>
+  </view>
+
+  <view class="doodle-tags" wx:if="{{ doodle_tags.length > 0 }}">
+    <block wx:for="{{ doodle_tags }}" wx:for-index="idx" wx:for-item="tag" wx:key="idx">
+      <van-tag color="#00a698" custom-class="doodle-tag">{{ tag }}</van-tag>
+    </block>
+  </view>
+
+  <view class="doodle-info">
+    <van-cell is-link title="推出了此涂鸦的地区" label="{{ clickMoreCountries }}" bind:click="showFullRegions"/>
+    
+    <van-cell is-link title="更多" label="{{ doodle_info['name'] }}" bind:click="showFullBlog"/>
+  </view>
+
+  <!-- <view class="doodle-footer">
+    <text>{{ doodle_info['id'] }}</text>
+  </view> -->
+
+  <van-popup show="{{ regions_show }}" closeable close-icon="close" 
+    bind:close="onRegionsClose"  position="bottom"
+    custom-style="height: 60%">
+    <view class="regions-view">
+      <block wx:for="{{ allCountries }}" wx:for-index="idx" wx:for-item="country" wx:key="idx">
+        <van-tag color="#e95065" custom-class="region-tag">{{ country }}</van-tag>
+      </block>
+    </view>
+  </van-popup>
+
+  <van-popup show="{{ blog_show }}" closeable close-icon="close"
+    bind:close="onBlogClose"  position="bottom"
+    custom-style="height: 60%">
+    <view class="blog-view" wx:if="{{ doodle_info['blog_text'] }}">
+      <rich-text nodes="{{ doodle_info['blog_text'] }}"></rich-text>
+    </view>
+  </van-popup>
+</view>

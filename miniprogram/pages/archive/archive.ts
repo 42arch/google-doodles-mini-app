@@ -38,6 +38,13 @@ Page({
     allDoodles: [] as Doodle[]
   },
 
+  goToDetail(e: any): void {
+    console.log(e.currentTarget.dataset.id)
+    wx.navigateTo({
+      url: `/pages/detail/detail?id=${e.currentTarget.dataset.id}`
+    })
+  },
+
   onDateConfirm(e: any) {
     console.log('选中日期', e.detail)
     let date = new Date(e.detail)
@@ -49,7 +56,6 @@ Page({
       month: month,
       day: day
     }
-    console.log(startDate)
     this.setData({
       startDate: startDate
     })

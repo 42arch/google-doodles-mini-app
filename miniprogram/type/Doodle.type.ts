@@ -15,7 +15,7 @@ export type Doodle = {
   is_dynamic: boolean,
   is_highlighted: boolean,
   is_animated_gif: boolean,
-  countires: string,
+  countries: string,
   blog_text: string,
   query: string,
   share_text: string,
