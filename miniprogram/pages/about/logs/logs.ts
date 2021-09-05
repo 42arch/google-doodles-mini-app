@@ -8,7 +8,7 @@ Page({
     logs: [
       {
         date: "2021/09/05",
-        version: "v1.5.0",
+        version: "v1.5.1",
         desc: "1. 新增涂鸦详情; \n 2. 修复bug和UI调整。"
       },
       {

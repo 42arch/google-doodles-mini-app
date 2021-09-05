@@ -13,6 +13,15 @@
       contentPosition="center"
       customStyle="color: #323233; border-color: #48bed9; font-size: .8rem;"
     >
+      github
+    </van-divider>
+    <text>没人用，开源算了。</text>
+    <text user-select="true">地址：https://github.com/explosionsinthesky/google-doodles-mini-app.git</text>
+
+    <van-divider
+      contentPosition="center"
+      customStyle="color: #323233; border-color: #48bed9; font-size: .8rem;"
+    >
       更新日志
     </van-divider>
 
