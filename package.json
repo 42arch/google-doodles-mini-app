@@ -1,14 +1,14 @@
 {
   "name": "google-doodles-app",
-  "version": "1.0.0",
-  "description": "",
+  "version": "1.5.0",
+  "description": "谷歌每日涂鸦微信小程序",
   "scripts": {
     "compile": "./node_modules/typescript/bin/tsc",
     "tsc": "node ./node_modules/typescript/lib/tsc.js"
   },
   "keywords": [],
-  "author": "",
-  "license": "",
+  "author": "rendan",
+  "license": "MIT",
   "dependencies": {
     "@vant/weapp": "^1.7.2"
   },
