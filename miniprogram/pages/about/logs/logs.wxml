@@ -15,8 +15,8 @@
     >
       github
     </van-divider>
-    <text>没人用，开源算了。</text>
-    <text user-select="true">地址：https://github.com/explosionsinthesky/google-doodles-mini-app.git</text>
+    <text>没人用，开源算了。😥</text>
+    <text user-select="true" style="text-decoration-line: blue;">地址：https://github.com/explosionsinthesky/google-doodles-mini-app.git</text>
 
     <van-divider
       contentPosition="center"

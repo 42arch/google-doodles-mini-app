@@ -27,7 +27,7 @@
 
   <view class="logo-view" wx:else>
     <view class="logo-item-view">
-      <van-image fit="widthFix" show-loading width="200" src="https://gg.footing.dev/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png"></van-image>
+      <van-image fit="widthFix" show-loading width="450" src="https://gug1.icu/logos/doodles/2021/seasonal-holidays-2021-6753651837109324-6752733080595603-cst.gif"></van-image>
     </view>
   </view>
 
