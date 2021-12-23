@@ -7,6 +7,11 @@ Page({
   data: {
     logs: [
       {
+        date: "2021/12/23",
+        version: "v1.5.3",
+        desc: "1. 替换镜像地址; \n 2. 升级部分依赖。"
+      },
+      {
         date: "2021/09/05",
         version: "v1.5.1",
         desc: "1. 新增涂鸦详情; \n 2. 修复bug和UI调整。"
