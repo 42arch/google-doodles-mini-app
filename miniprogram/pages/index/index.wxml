@@ -27,7 +27,7 @@
 
   <view class="logo-view" wx:else>
     <view class="logo-item-view">
-      <van-image fit="widthFix" show-loading width="450" src="https://gug1.icu/logos/doodles/2021/seasonal-holidays-2021-6753651837109324-6752733080595603-cst.gif"></van-image>
+      <van-image fit="widthFix" show-loading width="450" src="https://search.iwiki.uk/logos/doodles/2021/seasonal-holidays-2021-6753651837109324-6752733080595603-cst.gif"></van-image>
     </view>
   </view>
 
